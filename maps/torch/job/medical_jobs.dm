@@ -17,14 +17,14 @@
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/medical/senior/fleet,
 		/datum/mil_branch/civilian = /decl/hierarchy/outfit/job/torch/crew/medical/contractor/senior,
-		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/medical/senior/army
+		/datum/mil_branch/iic = /decl/hierarchy/outfit/job/torch/crew/medical/senior/army
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/o1,
 		/datum/mil_rank/fleet/o1,
 		/datum/mil_rank/fleet/o2,
-		/datum/mil_rank/army/o1,
-		/datum/mil_rank/army/o2,
+		/datum/mil_rank/iic/o1,
+		/datum/mil_rank/iic/o2,
 		/datum/mil_rank/civ/second,
 		/datum/mil_rank/civ/first,
 		/datum/mil_rank/civ/civ
@@ -50,7 +50,7 @@
 							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/senior_doctor/get_description_blurb()
-	return "Вы - Врач. Ваша обязанность - проводить операции и обучать врачей-ординаторов. Вы подчиняетесь Главному медицинскому офицеру. \
+	return "Вы - Врач. Ваша обязанность - проводить операции и обучать врачей-ординаторов.\
 	Обеспечивайте бесперебойную работу медицинского отсека и следите за количеством лекарств, крови и прочего. Жизнь людей - в ваших руках."
 
 /datum/job/junior_doctor
@@ -70,12 +70,12 @@
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/medical/senior/fleet,
 		/datum/mil_branch/civilian = /decl/hierarchy/outfit/job/torch/crew/medical/contractor/senior,
-		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/medical/junior/army
+		/datum/mil_branch/iic = /decl/hierarchy/outfit/job/torch/crew/medical/junior/army
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/o1,
 		/datum/mil_rank/fleet/o1,
-		/datum/mil_rank/army/o1,
+		/datum/mil_rank/iic/o1,
 		/datum/mil_rank/civ/second,
 		/datum/mil_rank/civ/first,
 		/datum/mil_rank/civ/civ
@@ -101,7 +101,7 @@
 							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/junior_doctor/get_description_blurb()
-	return "Вы - Врач-ординатор. Ваша обязанность - проводить лечение пациентов и обучатся тонкостям медицины благодаря помощи старших врачей. Вы подчиняетесь Главному медицинскому офицеру. \
+	return "Вы - Врач-ординатор. Ваша обязанность - проводить лечение пациентов и обучатся тонкостям медицины благодаря помощи старших врачей.\
 	Лечите людей, проводите операции и постарайтесь никого не убить."
 
 /datum/job/doctor
@@ -122,7 +122,7 @@
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/medical/doctor/fleet,
 		/datum/mil_branch/civilian = /decl/hierarchy/outfit/job/torch/crew/medical/contractor,
-		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/medical/doctor/army
+		/datum/mil_branch/iic = /decl/hierarchy/outfit/job/torch/crew/medical/doctor/army
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e3,
@@ -131,11 +131,10 @@
 		/datum/mil_rank/fleet/e4,
 		/datum/mil_rank/fleet/e5,
 		/datum/mil_rank/fleet/e6,
-		/datum/mil_rank/army/e3,
-		//datum/mil_rank/army/e4,
-		/datum/mil_rank/army/e4_alt,
-		/datum/mil_rank/army/e5,
-		/datum/mil_rank/army/e6,
+		/datum/mil_rank/iic/e3,
+		/datum/mil_rank/iic/e4_alt,
+		/datum/mil_rank/iic/e5,
+		/datum/mil_rank/iic/e6,
 		/datum/mil_rank/civ/three,
 		/datum/mil_rank/civ/second,
 		/datum/mil_rank/civ/civ
@@ -180,12 +179,12 @@
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/medical/doctor/fleet,
-		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/medical/doctor/army
+		/datum/mil_branch/iic = /decl/hierarchy/outfit/job/torch/crew/medical/doctor/army
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/fleet/e2,
-		/datum/mil_rank/army/e2
+		/datum/mil_rank/iic/e2
 	)
 
 	skill_points = 4
@@ -211,11 +210,11 @@
 							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/medical_trainee/get_description_blurb()
-	return "Вы - Парамедик-стажёр. Вы учитесь основам медицины благодаря помощи Ваших более опытных коллег. Вы подчиняетесь остальному медицинскому персоналу."
+	return "Вы - Парамедик-стажёр. Вы учитесь основам медицины благодаря помощи Ваших более опытных коллег."
 
 
 /datum/job/chemist
-	title = "Pharmacist"
+	title = "Pharmacologist"
 	department = "Медицинский"
 	department_flag = MED
 	total_positions = 1
@@ -274,7 +273,7 @@
 	alt_titles = list(
 		"Psychiatrist",
 		"Psionic Counselor" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/mentalist,
-		"Mentalist" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/mentalist
+		"Psionic Mentalist" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/mentalist
 	)
 
 	allowed_branches = list(
@@ -288,8 +287,8 @@
 		/datum/mil_rank/civ/civ,
 		/datum/mil_rank/fleet/o1,
 		/datum/mil_rank/fleet/o2,
-		/datum/mil_rank/army/o1,
-		/datum/mil_rank/army/o2,
+		/datum/mil_rank/iic/o1,
+		/datum/mil_rank/iic/o2,
 		/datum/mil_rank/ec/o1)
 	min_skill = list(
 		SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -307,7 +306,7 @@
 		/datum/computer_file/program/suit_sensors,
 		/datum/computer_file/program/camera_monitor
 	)
-	give_psionic_implant_on_join = FALSE
+	give_psionic_implant_on_join = TRUE
 
 /datum/job/psychiatrist/equip(var/mob/living/carbon/human/H)
 	if(H.mind?.role_alt_title == "Psionic Counselor")
@@ -317,4 +316,4 @@
 	return ..()
 
 /datum/job/psychiatrist/get_description_blurb()
-		return "Вы - Консультант. Ваша главная обязанность - поддерживать ментальное здоровье экипажа в тонусе. Вы подчиняетесь Главному медицинскому офицеру."
+		return "Вы - Консультант. Ваша главная обязанность - поддерживать ментальное здоровье экипажа в тонусе."

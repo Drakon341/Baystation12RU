@@ -85,11 +85,6 @@
 	damage_type = DAMAGE_BURN
 	eyeblur = 1//Some feedback that you've been hit
 	step_delay = 0.7
-	damage_falloff_list = list(
-		list(5, 0.97),
-		list(7, 0.94),
-		list(9, 0.88),
-	)
 
 /obj/item/projectile/energy/electrode/green
 	icon_state = "spark_green"
@@ -227,3 +222,11 @@
 	damage = 10
 	armor_penetration = 35
 	damage_type = DAMAGE_BRUTE
+
+/obj/item/projectile/energy/acid_spit
+	name = "acid bolt"
+	icon_state = "toxin"
+	damage = 18
+	damage_type = DAMAGE_BURN
+	fire_sound = 'sound/weapons/alien_spit.ogg'
+	pass_flags = PASS_FLAG_TABLE

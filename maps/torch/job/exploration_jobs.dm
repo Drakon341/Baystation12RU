@@ -33,7 +33,7 @@
 		access_guppy, access_hangar, access_petrov, access_petrov_helm, access_petrov_analysis, access_petrov_phoron,
 		access_petrov_toxins, access_petrov_chemistry, access_petrov_maint, access_tox, access_tox_storage, access_research,
 		access_xenobiology, access_xenoarch, access_torch_fax, access_radio_comm, access_radio_exp, access_radio_sci, access_research_storage,
-		access_exploration_guard //Proxima EC rework addition
+		access_exploration_infantry //PRX EC rework addition
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management,
@@ -142,15 +142,15 @@
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/exploration/expmed
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/exploration/expmed/army
+		/datum/mil_branch/iic = /decl/hierarchy/outfit/job/torch/crew/exploration/expmed/army
 		)
 
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/ec/e5,
-		/datum/mil_rank/army/e3,
-		/datum/mil_rank/army/e4_alt,
-		/datum/mil_rank/army/e5
+		/datum/mil_rank/iic/e3,
+		/datum/mil_rank/iic/e4_alt,
+		/datum/mil_rank/iic/e5
 	)
 	min_skill = list(   SKILL_EVA = SKILL_BASIC,
 						SKILL_MEDICAL = SKILL_ADEPT
@@ -190,15 +190,15 @@
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/exploration/expeng
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/exploration/expeng/army
+		/datum/mil_branch/iic = /decl/hierarchy/outfit/job/torch/crew/exploration/expeng/army
 		)
 
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/ec/e5,
-		/datum/mil_rank/army/e3,
-		/datum/mil_rank/army/e4_alt,
-		/datum/mil_rank/army/e5
+		/datum/mil_rank/iic/e3,
+		/datum/mil_rank/iic/e4_alt,
+		/datum/mil_rank/iic/e5
 	)
 	min_skill = list(   SKILL_EVA = SKILL_BASIC,
 						SKILL_CONSTRUCTION = SKILL_BASIC,
@@ -224,8 +224,8 @@
 	return "Вы - Исследователь-инженер. Ваша задача - участвовать в экспедициях в удалённые места. Первопроходец - лидер Вашей команды. \
 	Ваша цель - поддерживать шаттл в рабочем состоянии и проделывать проходы везде, где скажет ваш босс."
 
-/datum/job/expmar
-	title = "Expedition Marine Guard"
+/datum/job/expinf
+	title = "Expedition Infantry"
 	department = "Экспедиционный"
 	department_flag = EXP
 	total_positions = 2
@@ -234,16 +234,16 @@
 	selection_color = "#68099e"
 	minimum_character_age = list(SPECIES_HUMAN = 18)
 	ideal_character_age = 21
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/exploration/expmar
+	outfit_type = /decl/hierarchy/outfit/job/torch/crew/exploration/expinf
 	allowed_branches = list(
-		/datum/mil_branch/army
+		/datum/mil_branch/iic
 		)
 
 	allowed_ranks = list(
-		/datum/mil_rank/army/e2,
-		/datum/mil_rank/army/e3,
-		/datum/mil_rank/army/e4_alt,
-		/datum/mil_rank/army/e5
+		/datum/mil_rank/iic/e2,
+		/datum/mil_rank/iic/e3,
+		/datum/mil_rank/iic/e4_alt,
+		/datum/mil_rank/iic/e5
 	)
 	min_skill = list(   SKILL_EVA = SKILL_BASIC,
 						SKILL_MEDICAL = SKILL_BASIC,
@@ -259,11 +259,11 @@
 		access_explorer, access_maint_tunnels, access_eva, access_emergency_storage,
 		access_guppy_helm, access_solgov_crew, access_expedition_shuttle, access_guppy, access_hangar,
 		access_petrov, access_petrov_maint, access_research, access_radio_exp,
-		access_exploration_guard
+		access_exploration_infantry
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 
-/datum/job/expmar/get_description_blurb()
+/datum/job/expinf/get_description_blurb()
 	return "Вы - охранник экспедиции. Ваша задача - участвовать в экспедициях в удалённые места и обеспечивать безопасность экспедиции. Первопроходец - лидер Вашей команды. \
 	Слушайте его и повинуйтесь любой ценой. Постарайтесь не растратить весь запас батарей."

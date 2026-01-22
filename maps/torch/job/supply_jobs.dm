@@ -1,11 +1,11 @@
 /datum/job/cargo_tech
 	title = "Deck Technician"
 	department = "Supply"
-	selection_color = "#964B00"
+	selection_color = "#964b00"
 	department_flag = SUP
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "Начальнику палубы и Исполнительному офицеру"
+	supervisors = "Офицеру обеспечения"
 	minimum_character_age = list(SPECIES_HUMAN = 18)
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/supply/tech
@@ -13,7 +13,7 @@
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/supply/tech/fleet,
 		/datum/mil_branch/civilian = /decl/hierarchy/outfit/job/torch/crew/supply/contractor,
-		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/supply/tech/army
+		/datum/mil_branch/iic = /decl/hierarchy/outfit/job/torch/crew/supply/tech/army
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/e2,
@@ -22,10 +22,10 @@
 		/datum/mil_rank/fleet/e3,
 		/datum/mil_rank/fleet/e4,
 		/datum/mil_rank/fleet/e5,
-		/datum/mil_rank/army/e2,
-		/datum/mil_rank/army/e3,
-		/datum/mil_rank/army/e4_alt,
-		/datum/mil_rank/army/e5,
+		/datum/mil_rank/iic/e2,
+		/datum/mil_rank/iic/e3,
+		/datum/mil_rank/iic/e4_alt,
+		/datum/mil_rank/iic/e5,
 		/datum/mil_rank/civ/three,
 		/datum/mil_rank/civ/second,
 		/datum/mil_rank/civ/first,
@@ -49,17 +49,17 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/cargo_tech/get_description_blurb()
-	return "Вы - Палубный техник. Ваша задача - доставлять заказы в пункт назначения и разгружать дрон доставки. Вы подчиняетесь Исполнительному офицеру и Начальнику палубы. \
+	return "Вы - Палубный техник. Ваша задача - доставлять заказы в пункт назначения и разгружать дрон доставки.\
 	Не забывайте сортировать мусор и зарабатывать кредиты снабжения для своего отдела."
 
 /datum/job/mining
 	title = "Prospector"
 	department = "Supply"
-	selection_color = "#964B00"
+	selection_color = "#964b00"
 	department_flag = SUP
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "Начальнику палубы, корпоративному связному и Исполнительному офицеру"
+	supervisors = "Офицеру обеспечения"
 	economic_power = 7
 	minimum_character_age = list(SPECIES_HUMAN = 18)
 	ideal_character_age = 25

@@ -3,7 +3,7 @@
 	desc = "The NT41 Enforcer is a self-defense weapon made on bullpup system. Produced by NanoTrasen for it's Security Force. Looks cool and stylish, but sometimes too uncomfortably to run with it. Uses 6mmR rounds."
 	icon_state = "nt41"
 	item_state = "nt41"
-	icon = 'proxima/icons/obj/guns/guns.dmi'
+	icon = 'proxima/icons/obj/guns/nt41.dmi'
 	wielded_item_state = "nt41-wielded"
 	item_icons = list(
 		slot_r_hand_str = 'proxima/icons/mob/onmob/righthand.dmi',
@@ -23,7 +23,7 @@
 		list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", burst=1, fire_delay=0, move_delay=null),
 		list(mode_name="2-round bursts", mode_desc = "Short, controlled bursts", burst=2, fire_delay=null, move_delay=2, one_hand_penalty=2),
 		list(mode_name="3-round bursts", mode_desc = "Short, controlled bursts", burst=3, fire_delay=null, move_delay=4, one_hand_penalty=3),
-		list(mode_name = "full auto",  mode_desc = "600 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 2, one_hand_penalty=4)
+		list(mode_name="full auto",      burst=1,    fire_delay=2,    burst_delay=1.5,     one_hand_penalty=7,  burst_accuracy=list(0,-1,-1), dispersion=list(0.6, 1.2, 1.4, 1.6, 1.8), autofire_enabled=1)
 		)
 
 	bulk = GUN_BULK_RIFLE - 1
@@ -37,7 +37,7 @@
 /obj/item/gun/projectile/automatic/amrcarabine
 	name = "corporate carabine"
 	desc = "The sielent and deadly and manufactured by Aussec Armory, bullpup carabine LDC-542 is a common weapon for a long-medium ranged combat units in Private Military Companies. Uses 12mmR rounds."
-	icon = 'proxima/icons/obj/guns/guns.dmi'
+	icon = 'proxima/icons/obj/guns/ldc542.dmi'
 	icon_state = "amrcarabine"
 	item_state = "z8carbine"
 	force = 10
@@ -53,7 +53,7 @@
 	firemodes = list(
 		list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", burst=1, fire_delay=1, move_delay=null),
 		list(mode_name="2-round bursts", mode_desc = "Short, controlled bursts", burst=2, fire_delay=null, move_delay=2, one_hand_penalty=2),
-		list(mode_name = "full auto",  mode_desc = "400 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 4, one_hand_penalty=3)
+		list(mode_name="full auto",      burst=1, fire_delay=2,  burst_delay=3,  one_hand_penalty=5, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.0, 1.0, 1.2, 1.4, 1.6), autofire_enabled=1)
 		)
 
 	bulk = GUN_BULK_RIFLE
@@ -68,7 +68,7 @@
 /obj/item/gun/projectile/automatic/pdw
 	name = "corporate personal defense weapons"
 	desc = "The BP-15 'Moloh' is a  personal defense weapon, produced by Aussec Armory for use by police spec ops or solders. Uses 6mmR rounds."
-	icon = 'proxima/icons/obj/guns/guns.dmi'
+	icon = 'proxima/icons/obj/guns/bp15.dmi'
 	icon_state = "pdw"
 	item_state = "c20r"
 	item_icons = list(
@@ -88,7 +88,7 @@
 		list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", burst=1, fire_delay=1, move_delay=null),
 		list(mode_name="3-round bursts", mode_desc = "Short, controlled bursts", burst=3, fire_delay=null, move_delay=4, one_hand_penalty=3),
 		list(mode_name="5-round bursts", mode_desc = "Short, controlled bursts", burst=5, fire_delay=null, move_delay=6, one_hand_penalty=3),
-		list(mode_name = "fuller auto",  mode_desc = "800 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 1, one_hand_penalty=5)
+		list(mode_name="full auto",      burst=1,    fire_delay=2,    burst_delay=1.5,     one_hand_penalty=7,  burst_accuracy=list(0,-1,-1), dispersion=list(0.6, 1.2, 1.4, 1.6, 1.8), autofire_enabled=1)
 		)
 
 	bulk = GUN_BULK_RIFLE - 3

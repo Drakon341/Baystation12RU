@@ -2,25 +2,25 @@
 	title = "Chaplain"
 	department = "Обслуживания"
 	department_flag = SRV
-	selection_color = "#964B00"
+	selection_color = "#964b00"
 	total_positions = 1
 	spawn_positions = 1
 	minimum_character_age = list(SPECIES_HUMAN = 24)
 	ideal_character_age = 40
 	economic_power = 6
 	minimal_player_age = 0
+	give_psionic_implant_on_join = TRUE
 	supervisors = "Исполнительному офицеру"
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/service/chaplain
 	alt_titles = list(
 		"Celebrant",
-		"Priest",
 		"Psionic Confessor"
 	)  //PRX
 	allowed_branches = list(
 		/datum/mil_branch/civilian,
 		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/torch/crew/service/chaplain/ec,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/service/chaplain/fleet,
-		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/service/chaplain/army
+		/datum/mil_branch/iic = /decl/hierarchy/outfit/job/torch/crew/service/chaplain/army
 		)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/three ,
@@ -29,8 +29,8 @@
 		/datum/mil_rank/civ/civ,
 		/datum/mil_rank/fleet/o1,
 		/datum/mil_rank/fleet/o2,
-		/datum/mil_rank/army/o1,
-		/datum/mil_rank/army/o2,
+		/datum/mil_rank/iic/o1,
+		/datum/mil_rank/iic/o2,
 		/datum/mil_rank/ec/o1)
 	min_skill = list(SKILL_BUREAUCRACY = SKILL_BASIC)
 
@@ -40,10 +40,9 @@
 		access_radio_serv
 	)
 
-
 /datum/job/chaplain/get_description_blurb()
-	return "Вы - свещенник. Ваша работа - проповедовать религию на судне и организовывать похороны. Вы подчиняетесь Исполнительному офицеру. \
-	Проводите церемонии, проповеди и всё связанное с религией. Несите слово Божье на судно."
+	return "Вы - свещенник. Ваша работа - проповедовать религию на корабле и организовывать похороны.\
+	Проводите церемонии, проповеди и всё связанное с религией. Несите слово Божье."
 
 /datum/job/chaplain/equip(var/mob/living/carbon/human/H)
 	if(H.mind?.role_alt_title == "Psionic Confessor")
@@ -59,7 +58,7 @@
 	supervisors = "Исполнительному офицеру"
 	minimum_character_age = list(SPECIES_HUMAN = 18)
 	ideal_character_age = 20
-	selection_color = "#964B00"
+	selection_color = "#964b00"
 	alt_titles = list(
 		"Janitor")
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/service/janitor
@@ -67,7 +66,7 @@
 		/datum/mil_branch/civilian,
 		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/torch/crew/service/janitor/ec,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/service/janitor/fleet,
-		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/service/janitor/army
+		/datum/mil_branch/iic = /decl/hierarchy/outfit/job/torch/crew/service/janitor/army
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/three,
@@ -77,9 +76,9 @@
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/fleet/e3,
 		/datum/mil_rank/fleet/e4,
-		/datum/mil_rank/army/e2,
-		/datum/mil_rank/army/e3,
-		/datum/mil_rank/army/e4_alt
+		/datum/mil_rank/iic/e2,
+		/datum/mil_rank/iic/e3,
+		/datum/mil_rank/iic/e4_alt
 	)
 	min_skill = list(   SKILL_HAULING = SKILL_BASIC)
 
@@ -90,7 +89,7 @@
 	)
 
 /datum/job/janitor/get_description_blurb()
-	return "Вы - Уборщик. Ваша задача - поддерживать судно в частоте. Вы подчиняетесь Исполнительному офицеру. \
+	return "Вы - Уборщик. Ваша задача - поддерживать судно в частоте.\
 	Мойте полы, убирайте мусор и чистите туалеты. Превратите судно в рай для санитарного инспектора."
 
 /datum/job/chef
@@ -100,7 +99,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	minimum_character_age = list(SPECIES_HUMAN = 18)
-	selection_color = "#964B00"
+	selection_color = "#964b00"
 	supervisors = "Исполнительному офицеру"
 	alt_titles = list(
 		"Bartender",
@@ -112,7 +111,7 @@
 		/datum/mil_branch/civilian,
 		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/torch/crew/service/cook/ec,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/service/cook/fleet,
-		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/service/cook/army
+		/datum/mil_branch/iic = /decl/hierarchy/outfit/job/torch/crew/service/cook/army
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/three,
@@ -124,10 +123,10 @@
 		/datum/mil_rank/fleet/e3,
 		/datum/mil_rank/fleet/e4,
 		/datum/mil_rank/fleet/e5,
-		/datum/mil_rank/army/e2,
-		/datum/mil_rank/army/e3,
-		/datum/mil_rank/army/e4_alt,
-		/datum/mil_rank/army/e5
+		/datum/mil_rank/iic/e2,
+		/datum/mil_rank/iic/e3,
+		/datum/mil_rank/iic/e4_alt,
+		/datum/mil_rank/iic/e5
 	)
 	min_skill = list(
 		SKILL_BOTANY = SKILL_BASIC,
@@ -144,7 +143,7 @@
 	)
 
 /datum/job/chef/get_description_blurb()
-	return "Вы - Стюард. Ваша работа - готовить различные напитки и блюда для членов экипажа и пассажиров. Вы подчиняетесь Исполнительному офицеру. \
+	return "Вы - Стюард. Ваша работа - готовить различные напитки и блюда для членов экипажа и пассажиров.\
 	Готовьте блюда и смешивайте напитки."
 
 /datum/job/crew
@@ -174,4 +173,4 @@
 	)
 
 /datum/job/crew/get_description_blurb()
-	return "Вы - Матрос. Ваша работа - помогать остальному экипажу в их работе. Вы подчиняетесь Исполнительному офицеру."
+	return "Вы - Матрос. Ваша работа - помогать остальному экипажу в их работе."

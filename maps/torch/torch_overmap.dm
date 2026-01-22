@@ -2,9 +2,9 @@
 	name = "SEV Torch"
 	desc = "A frankensteined HNS Mako-class corvette, broadcasting SCGEC codes and the designation \"SEV Torch, HSC-4-13-X\"."
 	fore_dir = WEST
+	base = TRUE
 	vessel_mass = 100000
 	burn_delay = 2 SECONDS
-	base = TRUE
 
 	initial_restricted_waypoints = list(
 		"Charon" = list("nav_hangar_charon"), 	//can't have random shuttles popping inside the ship

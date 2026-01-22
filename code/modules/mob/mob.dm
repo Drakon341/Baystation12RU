@@ -210,7 +210,7 @@
 	if(pulling)
 		if(istype(pulling, /obj))
 			var/obj/O = pulling
-			. += clamp(O.w_class, 0, ITEM_SIZE_GARGANTUAN) / 5
+			. += O.get_additional_speed_decrease()
 		else if(istype(pulling, /mob))
 			var/mob/M = pulling
 			. += max(0, M.mob_size) / MOB_MEDIUM
@@ -353,6 +353,9 @@
 
 	var/obj/P = new /obj/effect/decal/point(tile)
 	P.set_invisibility(invisibility)
+	P.pixel_x = A.pixel_x
+	P.pixel_y = A.pixel_y
+	QDEL_IN(P, 2 SECONDS)
 	face_atom(A)
 	return 1
 
@@ -884,7 +887,7 @@
 	implant.update_icon()
 	if(istype(implant,/obj/item/implant))
 		var/obj/item/implant/imp = implant
-		imp.removed()
+		imp.ImplantRemoval()
 	if (istype(implant, /obj/item/holder/voxslug))
 		var/obj/item/holder/voxslug/holder = implant
 		var/mob/living/simple_animal/hostile/voxslug/V = holder.contents[1]
@@ -1069,18 +1072,6 @@
 	if(src.throw_icon)
 		src.throw_icon.icon_state = "act_throw_on"
 
-/mob/proc/check_CH(CH_name as text, var/CH_type, var/second_arg = null)
-	if(!src.client.CH || !istype(src.client.CH, CH_type))//(src.client.CH.handler_name != CH_name))
-		src.client.CH = new CH_type(client, second_arg)
-		to_chat(src, SPAN_WARNING("You prepare [CH_name]."))
-	else
-		kill_CH()
-	return
-
-/mob/proc/kill_CH()
-	if (src.client.CH)
-		to_chat(src, SPAN_NOTICE ("You unprepare [src.client.CH.handler_name]."))
-		QDEL_NULL(src.client.CH)
 
 /mob/proc/toggle_antag_pool()
 	set name = "Toggle Add-Antag Candidacy"

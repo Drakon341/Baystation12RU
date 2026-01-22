@@ -32,6 +32,11 @@
 	var/list/say_stand_down = list()	// When the threatened thing goes away.
 	var/list/say_escalate = list()		// When the threatened thing doesn't go away.
 
+// Lists belows are ASSOCIATIVE lists! Sound = Chance. If null is in there - it will not play sound when prompted
+	var/list/speak_sounds = list()		// Sounds that can be played when anything from speak list is said
+	var/list/emote_hear_sounds = list()	// Sounds that can be played when anything from emote_hear is performed
+	var/list/emote_see_sounds = list()	// Sounds that can be played when anything from emote_see is performed
+
 	var/threaten_sound = null			// Sound file played when the mob's AI calls threaten_target() for the first time.
 	var/stand_down_sound = null			// Sound file played when the mob's AI loses sight of the threatened target.
 
@@ -111,4 +116,4 @@
 
 /* For Meatbag */
 /datum/say_list/parrot/heist
- speak = list("Yaaar!","Squaaak!","Fight me Matey!","BAWWWWK Vox trying to eat me!")
+	speak = list("Yaaar!","Squaaak!","Fight me Matey!","BAWWWWK Vox trying to eat me!")

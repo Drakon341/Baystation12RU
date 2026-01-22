@@ -49,7 +49,7 @@
 							 /datum/computer_file/program/shields_monitor)
 
 /datum/job/senior_engineer/get_description_blurb()
-	return "Вы - Старший инженер. Вы опытный Старший Унтер-офицер. Вы подчиняетесь Главному инженеру, хотя вы можете иметь больше лет опыта чем он. Вам подчиняется остальной отдел. \
+	return "Вы - Старший инженер (СИ). Вы опытный старший унтер-офицер. Вам подчиняется остальной отдел, за исключением Главного инженера. \
 	Вы должны быть экспертом практически в каждом инженерном деле, а также быть знакомым с лидерскими качествами и владеть ими. \
 	Координируйте команду и убедитесь в правильной работе отдела вместе с Главным инженером."
 
@@ -66,14 +66,15 @@
 	alt_titles = list(
 		"Engine Technician",
 		"Damage Control Technician",
-		"Electrician",
+		"Electrical Technician",
 		"Atmospheric Technician",
+		"Life Support Technician"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer/fleet,
-		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer/army,
+		/datum/mil_branch/iic = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer/army,
 		/datum/mil_branch/civilian = /decl/hierarchy/outfit/job/torch/crew/engineering/contractor
 	)
 	allowed_ranks = list(
@@ -82,9 +83,9 @@
 		/datum/mil_rank/fleet/e5,
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/ec/e5,
-		/datum/mil_rank/army/e3,
-		/datum/mil_rank/army/e4_alt,
-		/datum/mil_rank/army/e5,
+		/datum/mil_rank/iic/e3,
+		/datum/mil_rank/iic/e4_alt,
+		/datum/mil_rank/iic/e5,
 		/datum/mil_rank/civ/three ,
 		/datum/mil_rank/civ/second,
 		/datum/mil_rank/civ/first,
@@ -119,8 +120,7 @@
 
 /datum/job/engineer/get_description_blurb()
 	return "Вы - инженер. Вы работаете под одним из множества названий и можете быть высокоспециализированны в определённой области инженернии. \
-	Возможно, что у Вы хотя бы в общем знакомы с большинством остальных областей инженерии, хотя это не ожидается от Вас. \
-	Вы подчиняетесь Главному инженеру и Старшему инженеру, ожидается, что Вы будете следовать их приказам."
+	Возможно, что у Вы хотя бы в общем знакомы с большинством остальных областей инженерии, хотя это не ожидается от Вас."
 
 /datum/job/engineer_trainee
 	title = "Engineer Trainee"
@@ -137,12 +137,12 @@
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer/fleet,
-		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer/army,
+		/datum/mil_branch/iic = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer/army,
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/fleet/e2,
-		/datum/mil_rank/army/e2,
+		/datum/mil_rank/iic/e2,
 	)
 
 	skill_points = 4
@@ -198,14 +198,14 @@
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/torch/crew/engineering/roboticistec,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/engineering/roboticistfleet,
-		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/engineering/roboticistarmy,
+		/datum/mil_branch/iic = /decl/hierarchy/outfit/job/torch/crew/engineering/roboticistarmy,
 		/datum/mil_branch/civilian = /decl/hierarchy/outfit/job/torch/crew/engineering/roboticist
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/e4,
 		/datum/mil_rank/fleet/e5,
-		/datum/mil_rank/army/e4_alt,
-		/datum/mil_rank/army/e5,
+		/datum/mil_rank/iic/e4_alt,
+		/datum/mil_rank/iic/e5,
 		/datum/mil_rank/ec/e5,
 		/datum/mil_rank/civ/three,
 		/datum/mil_rank/civ/second,
@@ -235,5 +235,5 @@
 	)
 
 /datum/job/roboticist/get_description_blurb()
-	return "Вы - робототехник. Вы ответственны за починку, улучшение и обслуживание судовых синтетиков (к примеру, роботов). \
-	Вы также ответственны за производство экзокостюмов (мехов) и ботов для различных отделов. Вы подчиняетесь Главному Инженеру."
+	return "Вы - робототехник. Вы ответственны за починку, улучшение, обслуживание и создание судовых синтетиков (например - ИПК). \
+	Вы также ответственны за производство экзокостюмов (мехов), скафандров, экзоскелетов (ИКС) и ботов для различных департаментов на борту."

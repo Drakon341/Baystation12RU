@@ -134,12 +134,19 @@
 	screen_shake = 0
 	battery_chamber_size = BATTERY_RIFLE
 	battery_type = /obj/item/cell/guncell/medium
-	recoil_buildup = 0
-	init_firemodes = list(
+	firemodes = list(
 		list(mode_name="stun charge", projectile_type=/obj/item/projectile/plasma/stun, charge_cost=20, fire_delay=4, projectile_color=COLOR_YELLOW),
 		list(mode_name="plasma charge", projectile_type=/obj/item/projectile/plasma, charge_cost=20, fire_delay=4, projectile_color=COLOR_BLUE_LIGHT),
 		list(mode_name="heavy plasma charge", projectile_type=/obj/item/projectile/plasma/heavy, charge_cost=50, fire_delay=8, projectile_color=COLOR_RED)
 	)
+
+/obj/item/gun/energy/k342/sol
+	desc = "K342 Barrakuda is the latest plasma weapon created by NanoTrasen for Sol Central Government. It can fire several types of charges: stunning, incendiary and lethal."
+	icon_state = "barrakuda_sol_off"
+	item_state = "barrakuda_sol"
+	wielded_item_state = "barrakuda_sol-wielded"
+
+/obj/item/gun/energy/k342/sol/empty
 
 /obj/item/gun/energy/k342/explo
 	desc = "K342E Kasatka is the latest plasma weapon created by NanoTrasen. This modification has been designed for Sol Central Government Expeditionary Corps and can fire several types of charges: stunning, lethal and net-mode."
@@ -148,7 +155,7 @@
 	req_access = list(list("ACCESS_TORCH_EXPLORER"))
 	wielded_item_state = "kasatka-wielded"
 	authorized_modes = list(UNAUTHORIZED, UNAUTHORIZED, UNAUTHORIZED)
-	init_firemodes = list(
+	firemodes = list(
 		list(mode_name="stun charge", projectile_type=/obj/item/projectile/plasma/stun, charge_cost=20, fire_delay=4, projectile_color=COLOR_YELLOW),
 		list(mode_name="plasma charge", projectile_type=/obj/item/projectile/plasma, charge_cost=20, fire_delay=4, projectile_color=COLOR_BLUE_LIGHT),
 		list(mode_name="net charge", projectile_type=/obj/item/projectile/plasma/stun/net, charge_cost=150, fire_delay=20, projectile_color=COLOR_GREEN)
@@ -180,7 +187,6 @@
 				i = "g_0+"
 		if(i)
 			overlays += image(icon, i)
-			overlays += image(icon, splittext(init_firemodes[sel_mode]["mode_name"], " ")[1])
 	else
 		icon_state = "[initial(item_state)]_off"
 
@@ -205,8 +211,7 @@
 	screen_shake = 0
 	battery_chamber_size = BATTERY_PISTOL
 	battery_type = /obj/item/cell/guncell/pistol/small
-	recoil_buildup = 0
-	init_firemodes = list(
+	firemodes = list(
 		list(mode_name="stun charge", projectile_type=/obj/item/projectile/plasma/stun, charge_cost=25, fire_delay=4, projectile_color=COLOR_BLUE_LIGHT),
 		list(mode_name="plasma charge", projectile_type=/obj/item/projectile/plasma/weak, charge_cost=25, fire_delay=4, projectile_color=COLOR_GREEN),
 	)
@@ -221,6 +226,14 @@
 		return TRUE
 	return ..()
 
+/obj/item/gun/energy/k342/pistol/mounted
+	name = "mounted plasma gun"
+	self_recharge = 1
+	use_external_power = 1
+	has_safety = FALSE
+	req_access = null
+	authorized_modes = null
+
 /obj/item/gun/energy/k342/sniper
 	name = "plasma sniper rifle"
 	desc = "K480 Skat is the latest heavy plasma weapon created by NanoTrasen for SolGov snipers, capable to fire several types of charges: stunning, incendiary, and lethal bolts. Advanced magnetic constriction technology improves accuracy and firepower."
@@ -232,7 +245,7 @@
 	slot_flags = SLOT_BACK
 	scoped_accuracy = 6
 	scope_zoom = 1.5
-	init_firemodes = list(
+	firemodes = list(
 		list(mode_name="stun charge", projectile_type=/obj/item/projectile/plasma/stun/sniper, charge_cost=60, fire_delay=6, projectile_color=COLOR_YELLOW),
 		list(mode_name="plasma charge", projectile_type=/obj/item/projectile/plasma/sniper, charge_cost=60, fire_delay=6, projectile_color=COLOR_BLUE_LIGHT),
 		list(mode_name="heavy plasma charge", projectile_type=/obj/item/projectile/plasma/heavy/sniper, charge_cost=120, fire_delay=10, projectile_color=COLOR_RED)

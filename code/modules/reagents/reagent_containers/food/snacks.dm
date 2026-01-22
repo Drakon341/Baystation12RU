@@ -2015,24 +2015,24 @@
 	w_class = ITEM_SIZE_NORMAL //whole pizzas and cakes shouldn't fit in a pocket, you can slice them if you want to do that.
 
 /**
- *  A food item slice
- *
- *  This path contains some extra code for spawning slices pre-filled with
- *  reagents.
- */
+	*  A food item slice
+	*
+	*  This path contains some extra code for spawning slices pre-filled with
+	*  reagents.
+	*/
 /obj/item/reagent_containers/food/snacks/slice
 	name = "slice of... something"
 	var/whole_path // path for the item from which this slice comes
 	var/filled = FALSE // should the slice spawn with any reagents
 
 /**
- *  Spawn a new slice of food
- *
- *  If the slice's filled is TRUE, this will also fill the slice with the
- *  appropriate amount of reagents. Note that this is done by spawning a new
- *  whole item, transferring the reagents and deleting the whole item, which may
- *  have performance implications.
- */
+	*  Spawn a new slice of food
+	*
+	*  If the slice's filled is TRUE, this will also fill the slice with the
+	*  appropriate amount of reagents. Note that this is done by spawning a new
+	*  whole item, transferring the reagents and deleting the whole item, which may
+	*  have performance implications.
+	*/
 /obj/item/reagent_containers/food/snacks/slice/Initialize()
 	.=..()
 	if(filled)
@@ -3907,3 +3907,14 @@
 	name = "taco"
 	desc = "Interestingly, the shell has gone soft and the contents have gone stale."
 	icon_state = "ancient_taco"
+
+
+/obj/item/reagent_containers/food/snacks/monkeycube/abominationcube
+	name = "larva cube"
+	desc = "Requires blood to expand."
+	monkey_type = /mob/living/simple_animal/hostile/infestation/larva
+	color = COLOR_MAROON
+	filling_color = COLOR_MAROON
+
+/obj/item/reagent_containers/food/snacks/monkeycube/abominationcube/friendly
+	monkey_type = /mob/living/simple_animal/hostile/infestation/larva/friendly
